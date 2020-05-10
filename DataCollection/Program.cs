@@ -16,7 +16,7 @@ namespace DataCollection
             List<string> dates = GetWeeks();
             dates.Reverse();
 
-            WriteToFile(dates);
+            //WriteToFile(dates);
 
             const int indexToCheck = 2017;
             CheckIndex(dates, indexToCheck);
