@@ -25,5 +25,27 @@ namespace WebApi.Controllers
         {
             return Ok(_context.Players);
         }
+
+        [HttpGet("{code}")]
+        public IActionResult GetPlayerWeeks(string code)
+        {
+            var result = _context.RankDates
+                .Where(x => x.PlayerId == code);
+
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetDateRange")]
+        public IActionResult GetDateRange(DateRangeModel model)
+        {
+            var allDates = _context.RankDates
+                .Where(x => x.PlayerId == model.PlayerId);
+
+            var result = allDates
+                .Where(x => x.Date >= model.StartDate && x.Date <= model.EndDate);
+
+            return Ok(result);
+        }
     }
 }
