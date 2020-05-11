@@ -1,6 +1,9 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Button from '@material-ui/core/Button';
+
+import styles from './PlayerSelector.module.css';
 
 import { Displayer } from '../../components';
 import { fetchPlayers, fetchRankDates, fetchDateRange } from '../../api';
@@ -83,7 +86,7 @@ class PlayerSelector extends React.Component {
 
         return (
             <div>
-            <div>
+            <div className={styles.autobox}>
                 <Autocomplete
                 id="combo-box-demo"
                 options={playerList}
@@ -96,19 +99,19 @@ class PlayerSelector extends React.Component {
                 <br/><br/>
                 Between dates:
 
-                <input type="date"
+                <input type="date" className={styles.date}
                 value={this.state.startDate}
                 onChange={this.handleStartChange}
                 />
                 to
-                <input type="date"
+                <input type="date" className={styles.date}
                 value={this.state.endDate}
                 onChange={this.handleEndChange}
                 />
 
                 <br/><br/>
 
-                <button onClick={this.resetDates}>Reset Dates</button>
+                <Button variant="contained" onClick={this.resetDates}>Reset Dates</Button>
 
                 </div>
                 <div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
+import styles from './Displayer.module.css';
+
 class Displayer extends React.Component {  
     render() {
         return (
-            <div>
+            <div className={styles.container}>
                 <Line
                     data={{
                         labels: this.props.x.map(({date}) => date),
