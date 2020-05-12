@@ -1,6 +1,8 @@
 # Atp Analyser
 A visualisation of tennis player rankings from any date, any time.
 
+![Atp-Analyser Demo](demo/atpdemo.gif)
+
 ## Run the application
 Use these instructions to get the project up and running.
 
